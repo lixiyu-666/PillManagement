@@ -86,7 +86,7 @@
 ```yaml
 spring:
   datasource:
-    url: jdbc:sqlite:E:/item/PillManagement/PillManagement.db
+    url: jdbc:sqlite:你的db路径
     driver-class-name: org.sqlite.JDBC
 
 # 登录配置
