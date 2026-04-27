@@ -7,8 +7,8 @@
 ### 后端
 - **框架**: Spring Boot 3.2.1
 - **语言**: Java 17
-- **ORM**: MyBatis-Plus 3.5.5
-- **数据库**: MySQL 8.0+
+- **ORM**: MyBatis-Plus 3.5.8
+- **数据库**: SQLite 3（支持 Android 端本地存储）
 - **构建工具**: Maven
 - **其他**: Lombok, Jackson
 
@@ -64,7 +64,7 @@
 ### 后端环境
 - JDK 17 或更高版本
 - Maven 3.6+
-- MySQL 8.0+ 数据库
+- SQLite 3（无需单独安装，依赖已包含）
 
 ### 前端环境
 - Node.js 16+ 
@@ -74,25 +74,20 @@
 
 ### 1. 数据库准备
 
-创建数据库并执行SQL脚本：
-```sql
-CREATE DATABASE medication_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
+使用 Navicat 或其他工具创建 SQLite 数据库文件：
+- 新建连接 → 选择 SQLite
+- 数据库文件路径：如 `E:/item/PillManagement/PillManagement.db`
 
-导入数据库结构：
-```bash
-mysql -u root -p medication_tracker < backend/src/main/resources/schema.sql
-```
+然后执行建表 SQL（见下方）
 
 ### 2. 后端配置
 
-修改数据库配置 `backend/src/main/resources/application.yml`：
+数据库配置 `backend/src/main/resources/application.yml`：
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/medication_tracker?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: your_username
-    password: your_password
+    url: jdbc:sqlite:E:/item/PillManagement/PillManagement.db
+    driver-class-name: org.sqlite.JDBC
 
 # 登录配置
 auth:
@@ -128,7 +123,7 @@ npm run dev
 
 前端构建：
 ```bash
-cd frontend
+cd fuyaojiance-main/frontend
 npm run build
 ```
 

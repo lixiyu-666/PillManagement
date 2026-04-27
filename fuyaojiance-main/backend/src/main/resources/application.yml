@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/medication_tracker?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-    username: root
-    password: zzx123456!
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:sqlite:E:/item/PillManagement/PillManagement.db?date_format=yyyy-MM-dd&datetime_format=yyyy-MM-dd HH:mm:ss
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 1  # SQLite 只支持单连接
 
   servlet:
     multipart:
