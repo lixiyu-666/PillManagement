@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     # SQLite 数据库路径（相对于项目根目录）
-    url: jdbc:sqlite:${user.dir}/PillManagement.db?date_format=yyyy-MM-dd&datetime_format=yyyy-MM-dd HH:mm:ss
+    url: jdbc:sqlite:E:/item/PillManagement/PillManagement.db
     driver-class-name: org.sqlite.JDBC
     hikari:
       maximum-pool-size: 1  # SQLite 只支持单连接
