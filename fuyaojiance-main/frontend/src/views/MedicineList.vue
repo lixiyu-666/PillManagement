@@ -100,11 +100,23 @@ onMounted(() => {
 
 <style scoped>
 .medicine-list {
+  padding-top: 16px;
   padding-bottom: 80px;
+}
+.empty-state {
+  padding-top: 16px;
+  text-align: center;
+  color: #999;
 }
 
 .medicine-card {
   cursor: pointer;
+  position: relative; /* 定位父级 */
+  padding: 16px;
+  margin: 8px 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .medicine-header {
@@ -131,9 +143,11 @@ onMounted(() => {
   margin-bottom: 12px;
 }
 
+/* 核心：删除按钮定位在右下角 */
 .medicine-actions {
-  display: flex;
-  gap: 8px;
+  position: absolute;
+  bottom: 16px;    /* 距离底部距离 */
+  right: 16px;     /* 距离右侧距离 */
 }
 
 .add-btn {

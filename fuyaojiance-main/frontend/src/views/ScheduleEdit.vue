@@ -6,7 +6,7 @@
       @click-left="router.back()"
     />
 
-    <van-form @submit="onSubmit">
+    <van-form @submit="onSubmit" class="form-wrapper">
       <van-cell-group inset>
         <van-field
           v-model="form.name"
@@ -367,6 +367,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.form-wrapper {
+  margin-top: 16px; /* 调整这个值，比如 16/20/24，直到你满意为止 */
+}
+
 .section-title {
   padding: 16px 16px 8px;
   font-size: 14px;

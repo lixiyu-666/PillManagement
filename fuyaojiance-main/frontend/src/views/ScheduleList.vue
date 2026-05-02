@@ -118,6 +118,7 @@ onMounted(() => {
 
 <style scoped>
 .schedule-list {
+  padding-top: 16px;
   padding-bottom: 80px;
 }
 

@@ -129,11 +129,17 @@ onMounted(() => {
 
 <style scoped>
 .filter-bar {
-  padding: 0 16px 8px;
+  padding: 16px 16px 8px; /* 上方增加距离 */
 }
 
 .record-list {
+  padding-top: 8px;
   padding-bottom: 80px;
+}
+.empty-state {
+  padding-top: 40px;
+  text-align: center;
+  color: #999;
 }
 
 .record-card {

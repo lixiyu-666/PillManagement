@@ -3,7 +3,7 @@
     <van-nav-bar title="统计分析" />
 
     <!-- 服药完成率 -->
-    <div class="card">
+    <div class="card first-card">
       <div class="card-title">服药完成率</div>
       <div class="completion-stats">
         <div class="rate-circle">
@@ -301,6 +301,10 @@ onUnmounted(() => {
   align-items: center;
   margin-bottom: 16px;
   gap: 20px;
+}
+
+.first-card {
+  margin-top: 16px; /* 只有这个卡片顶部有间距 */
 }
 
 .rate-circle {
