@@ -140,7 +140,7 @@ public class ScheduleServiceImpl implements ScheduleService {
             medDto.setMedicineId(((Number) m.get("medicine_id")).longValue());
             medDto.setMedicineName((String) m.get("medicine_name"));
             medDto.setSpecification((String) m.get("specification"));
-            medDto.setDosage((BigDecimal) m.get("dosage"));
+            medDto.setDosage(m.get("dosage") != null ? new BigDecimal(m.get("dosage").toString()) : null);
             medicineDTOs.add(medDto);
         }
 
