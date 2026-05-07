@@ -126,18 +126,17 @@ const saveCredentials = () => {
 const onSubmit = async () => {
   loading.value = true
   try {
-    const data = await login(form.value)
-    // 保存token
+    const response = await login(form.value)
+    const data = response.data || response
     localStorage.setItem('token', data.token)
     localStorage.setItem('username', data.username)
     
-    // 保存账号密码（如果勾选了记住密码）
     saveCredentials()
     
     showToast('登录成功')
-    // 跳转到首页
     router.push('/')
   } catch (e) {
+    showToast(e.message || '登录失败')
     console.error(e)
   } finally {
     loading.value = false
